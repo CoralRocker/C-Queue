@@ -53,14 +53,16 @@ void popQueue(Queue *q)
 	int* tmp = malloc(sizeof(int)*q->size);
 	memcpy(tmp, q->arr + 1, sizeof(int)*q->size);
 	free(q->arr);
+	q->arr = malloc(sizeof(int)*q->size);
 	memcpy(q->arr, tmp, sizeof(int)*q->size);
 	free(tmp);
 }
 
 void copyQueue(Queue *q1, Queue *q2)
 {
-	q2->size = q1->size;
 	free(q2->arr);
-	q2->arr = malloc(sizeof(int)*q1->size);
-	memcpy(q2, q1, sizeof(int)*q1->size);
+	q2->arr = (int*)malloc(sizeof(int)*q1->size);
+	memcpy(q2->arr, q1->arr, sizeof(int)*q1->size);
+	q2->size = q1->size;
+
 }

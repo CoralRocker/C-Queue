@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Queue.h"
 
+
 void printQueue(Queue *q)
 {
 	Queue *tmp = initQueue();
