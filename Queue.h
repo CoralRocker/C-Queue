@@ -12,6 +12,7 @@ Queue* initQueue()
 	Queue *q = malloc(sizeof(Queue));
 	q->arr = NULL;
 	q->size = 0;
+	return q;
 }
 
 void freeQueue(Queue *q)
