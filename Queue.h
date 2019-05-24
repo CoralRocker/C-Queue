@@ -48,5 +48,10 @@ void pushQueue(Queue *q, int val)
 
 void popQueue(Queue *q)
 {
-	
+	q->size--;
+	int* tmp = malloc(sizeof(int)*q->size);
+	memcpy(tmp, q->arr + 1, sizeof(int)*q->size);
+	free(q->arr);
+	memcpy(q->arr, tmp, sizeof(int)*q->size);
+	free(tmp);
 }
